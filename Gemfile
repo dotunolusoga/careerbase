@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'simple_form'
 
 
 group :development, :test do
