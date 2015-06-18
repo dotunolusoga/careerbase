@@ -1,0 +1,42 @@
+body {
+  background-color: seashell;
+  margin: 0;
+  padding: 0 1em;
+
+  ul {
+    height: 60px;
+    background-color: #2C3240;
+
+    li {
+      padding: 18px 14px;
+      display: inline;
+      font-size: 1em;
+      font-weight: 600;
+    }
+
+    .logo {
+      font-size: 25px;
+      color: #2FABD0;
+      float: left;
+    }
+
+    .rightNav {
+      display: inline-block;
+      float: right;
+      margin: 0 15px 0 0;
+    }
+
+  }
+
+  #container {
+    @include outer-container(100%);
+    .nav {
+      @include span-columns(12)
+    }
+    .nav {
+      background-color: #0A0815;
+      height: 40px;
+
+    }
+  }
+}
