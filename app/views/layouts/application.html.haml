@@ -19,7 +19,7 @@
               %li.rightNav= link_to "Sign In", new_user_session_path
           - else
             %li= link_to "Add a company", new_company_path
-            %li= link_to "List current companies", index_company_path
+            %li= link_to "List current companies", new_company_path
             %li.rightNav= link_to "Sign Out", user_session_path, method: :delete
     %p.notice= notice
     %p.alert= alert

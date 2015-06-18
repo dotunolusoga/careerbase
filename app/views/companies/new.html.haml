@@ -1,0 +1,17 @@
+%h1 Add company
+
+= simple_form_for @company do |f|
+    = f.input :name
+    = f.input :url
+    = f.input :email
+    = f.input :description
+    = f.input :contact_name
+    = f.input :phone
+    = f.input :street1
+    = f.input :street2
+    = f.input :city
+    = f.input :state
+    = f.input :zip
+    = f.input :emp_count
+    = f.input :industry
+    = f.button :submit, "Add Company"
