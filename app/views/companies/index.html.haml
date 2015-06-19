@@ -1,0 +1,9 @@
+%h2 Listed Companies
+
+%ul
+- @companies.each do |company|
+  %li
+    = company.name
+    %ul
+      %li
+        = company.url

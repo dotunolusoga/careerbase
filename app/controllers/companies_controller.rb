@@ -14,6 +14,10 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def index
+    @companies = Company.all
+  end
+
   protected
 
   def company_params
