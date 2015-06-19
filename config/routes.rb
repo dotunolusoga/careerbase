@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :companies, only: [:new, :create, :index, :show]
+  resources :companies, only: [:new, :create, :index, :show, :edit, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
