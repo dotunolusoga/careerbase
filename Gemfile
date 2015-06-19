@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'neat'
 gem 'simple_form'
 gem 'sorcery'
+gem 'pry'
 
 
 

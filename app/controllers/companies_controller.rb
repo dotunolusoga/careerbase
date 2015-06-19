@@ -1,4 +1,7 @@
+require 'pry'
+
 class CompaniesController < ApplicationController
+
 
   def new
     @company = Company.new
@@ -17,6 +20,11 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
   end
+
+  def show
+    @company = Company.find(params[:id])
+  end
+
 
   protected
 
