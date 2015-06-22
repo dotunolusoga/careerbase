@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController
-  # before_filter :load_user
   before_filter :require_login
 
 
@@ -19,11 +18,12 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    #if @user == current_user
-      @companies = Company.all
-    # else
-      # redirect_to root_path, notice: "You have added no companies so far."
-    # end
+      @user = current_user
+      if @user.companies.blank?
+        redirect_to root_path, notice: "You have added no companies so far."
+      else
+        @companies = @user.companies
+     end
   end
 
   def show
