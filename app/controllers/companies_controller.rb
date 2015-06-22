@@ -9,6 +9,7 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    @company.user_id = current_user.id
     if @company.save
       redirect_to companies_path, notice: "#{@company.name} has now been added."
     else
@@ -18,7 +19,7 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    # if @user == current_user
+    #if @user == current_user
       @companies = Company.all
     # else
       # redirect_to root_path, notice: "You have added no companies so far."

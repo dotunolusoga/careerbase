@@ -21,6 +21,8 @@
             %li= link_to "Add a Company", new_company_path
             %li= link_to "List current Companies", companies_path
             %li.rightNav= link_to "Sign Out", user_session_path, method: :delete
+            %li.rightNav= link_to "Profile", user_path(current_user)
+            %li.rightNav= link_to "Home", root_path
     %p.notice= notice
     %p.alert= alert
     = yield

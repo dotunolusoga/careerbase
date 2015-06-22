@@ -1,0 +1,7 @@
+%h1 Edit Profile
+
+= simple_form_for @user do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :employment_status, collection: ["Unemployed", "Happily Employed", "Employed but still looking"]
+  = f.button :submit, "Update"
