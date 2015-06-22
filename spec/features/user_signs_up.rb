@@ -12,13 +12,13 @@ feature "User Signs Up" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "password1"
     click_button "Sign Up"
-    page.should have_content("Welcome, Joe")
+    page.should have_content("Hello, Joe")
     click_on "Sign Out"
     click_on "Sign In"
     fill_in "Email", with: "joe@example.com"
     fill_in "Password", with: "password1"
     click_button "Sign In"
-    page.should have_content("Welcome back, Joe")
+    page.should have_content("Hello again, Joe")
   end
 
   scenario "Error Path" do
@@ -38,6 +38,6 @@ feature "User Signs Up" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "password1"
     click_on "Sign Up"
-    page.should have_content("Welcome, Sally")
+    page.should have_content("Hello, Sally")
   end
 end

@@ -15,6 +15,8 @@ gem 'neat'
 gem 'simple_form'
 gem 'sorcery'
 gem 'pry'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
 
 
 
@@ -35,4 +37,9 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
 end

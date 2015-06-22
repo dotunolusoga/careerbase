@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
+  has_many :companies
+
 
   validates :email, :name, presence: true
   validates :name, length: { minimum: 3 }

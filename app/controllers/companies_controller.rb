@@ -1,6 +1,6 @@
-require 'pry'
-
 class CompaniesController < ApplicationController
+  # before_filter :load_user
+  before_filter :require_login
 
 
   def new
@@ -10,15 +10,19 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      redirect_to root_path, notice: "#{@company.name} has now been added."
+      redirect_to companies_path, notice: "#{@company.name} has now been added."
     else
-       flash.alert = "Please fix the errors below to continue."
+       flash.alert = "Company could not be saved. Please fix the errors to continue."
        render :new
     end
   end
 
   def index
-    @companies = Company.all
+    # if @user == current_user
+      @companies = Company.all
+    # else
+      # redirect_to root_path, notice: "You have added no companies so far."
+    # end
   end
 
   def show
@@ -56,8 +60,12 @@ class CompaniesController < ApplicationController
 
   protected
 
+  def load_user
+    @user = User.find(params[:user_id])
+  end
+
   def company_params
-    params.require(:company).permit(:name, :url, :street1, :street2, :city, :state, :zip, :description, :phone, :url, :email, :contact_name, :emp_count, :industry)
+    params.require(:company).permit(:name, :url, :user_id, :street1, :street2, :city, :state, :zip, :description, :phone, :url, :email, :contact_name, :emp_count, :industry)
   end
 
 end
