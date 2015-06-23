@@ -28,6 +28,8 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @notes = @company.notes.all
+    @note = Note.new
   end
 
   def edit
@@ -60,6 +62,18 @@ class CompaniesController < ApplicationController
 
 
   protected
+
+  def load_company
+    if params[:id].present?
+      @company = company.find(params[:id])
+    else
+      @company = company.new
+    end
+
+    if params[:company].present?
+      @company.assign_attributes(company_params)
+    end
+  end
 
   def load_user
     @user = User.find(params[:user_id])

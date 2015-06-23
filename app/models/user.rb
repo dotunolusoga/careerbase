@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :companies
+  has_many :notes, dependent: :destroy
 
 
   validates :email, :name, presence: true

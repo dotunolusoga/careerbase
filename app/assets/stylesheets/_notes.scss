@@ -1,0 +1,60 @@
+// Place all the styles related to the notes here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notes {
+  margin-top: 1em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notes-heading {
+  text-transform: uppercase;
+}
+
+.note {
+  margin-top: 1.5em;
+  border-bottom: 1px solid $light-gray;
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.note-form {
+  padding: 1em;
+  background-color: #efefef;
+  margin-bottom: 1em;
+  .note-form-heading {
+    text-transform: uppercase;
+    color: $medium-gray;
+  }
+  .error {
+    margin-bottom: 1em;
+    display: inline-block;
+    color: red;
+    font-size: 0.875rem;
+    background-color: red;
+    color: white;
+    padding: 0.5em 1em;
+    font-weight: 700;
+  }
+}
+
+.note-meta a {
+  display: block;
+  color: $primary-color;
+  &:hover {
+    color: darken($primary-color, 20%);
+  }
+}
+
+.timestamp {
+  display: block;
+  color: $medium-gray;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.note-body {
+  padding: 1em 0;
+}
