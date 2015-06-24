@@ -8,7 +8,7 @@
     = csrf_meta_tags
   %body
     %header
-    #container
+    %div.container-fluid
       %nav
         %ul
           %li.logo CareerBase
@@ -23,6 +23,9 @@
             %li.rightNav= link_to "Sign Out", user_session_path, method: :delete
             %li.rightNav= link_to "Profile", user_path(current_user)
             %li.rightNav= link_to "Home", root_path
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+
+    #container
+      %section#content
+        - flash.each do |key, message|
+          %div{ class: "flash-#{key}" }= message
+        = yield
