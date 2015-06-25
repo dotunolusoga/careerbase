@@ -14,9 +14,9 @@ body {
         display: inline;
         font-size: 1em;
 
-        -webkit-transition: all 0.5s linear;
-      	-moz-transition: all 0.3s linear;
-      	-o-transition: all 0.3s linear;
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        -o-transition: all 0.3s ease-in;
       }
 
       h2 {
@@ -49,6 +49,10 @@ body {
         float: left;
         margin: 0 15px 0 0;
         font-weight: 600;
+      }
+
+      .logo:hover {
+        background-color: #2C3240;
       }
 
       .leftNav {
@@ -112,7 +116,7 @@ body {
       @include flex-wrap(wrap);
       clear: both;
       text-align: center;
-      padding: 40px;
+      padding: 5px;
 
       .flex-box {
         @include transition (all 0.2s ease-in-out);
@@ -155,6 +159,7 @@ body {
 
         .logo-color {
           color: #2FABD0;
+          font-size: 1.4em;
         }
 
         p {
