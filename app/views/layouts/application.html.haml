@@ -8,7 +8,6 @@
     = csrf_meta_tags
   %body
     %header
-    %div.container-fluid
       %nav
         %ul
           %li.logo CareerBase
@@ -18,11 +17,17 @@
             - unless controller_name == "user_sessions"
               %li.rightNav= link_to "Sign In", new_user_session_path
           - else
-            %li= link_to "Add a Company", new_company_path
-            %li= link_to "List current Companies", companies_path
-            %li.rightNav= link_to "Sign Out", user_session_path, method: :delete
-            %li.rightNav= link_to "Profile", user_path(current_user)
-            %li.rightNav= link_to "Home", root_path
+            %li.leftNav
+              %h2= link_to "Add a Company", new_company_path
+            %li.leftNav
+              %h2= link_to "List current Companies", companies_path
+            %li.rightNav
+              %h2= link_to "Sign Out", user_session_path, method: :delete
+            %li.rightNav
+              %h2= link_to "Profile", user_path(current_user)
+            %li.rightNav
+              %h2= link_to "Home", root_path
+
 
     #container
       %section#content

@@ -1,17 +1,18 @@
-%h1 Add company
+.form-style
+  %h1 Add New Company
 
-= simple_form_for @company do |f|
-    = f.input :name
-    = f.input :url
-    = f.input :email
-    = f.input :description
-    = f.input :contact_name
+  = simple_form_for @company do |f|
+    = f.input :name, label: "Company Name"
+    = f.input :url, label: "Website"
+    = f.input :email, label: "Contact Email - make sure this is an email address you can interact with"
+    = f.input :description, label: "Description of Company"
+    = f.input :contact_name, label: "Contact - who do you know at this company?"
     = f.input :phone
-    = f.input :street1
-    = f.input :street2
+    = f.input :street1, label: "Address"
+    = f.input :street2, label: "Address 2"
     = f.input :city
     = f.input :state
     = f.input :zip
-    = f.input :emp_count
+    = f.input :emp_count, label: "Company Size", collection: ["5 - 50", "50 - 150", "150 - 500", "500+"]
     = f.input :industry
     = f.button :submit, "Add Company"

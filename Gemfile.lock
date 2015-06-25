@@ -48,9 +48,6 @@ GEM
       bourbon (>= 3.2)
       sass (>= 3.2)
       thor
-    bootstrap-sass (3.3.5)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.2.19)
     bourbon (4.2.3)
       sass (~> 3.4)
       thor
@@ -82,6 +79,8 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -239,13 +238,13 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bitters
-  bootstrap-sass (~> 3.3.5)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
   fabrication
   faker
+  font-awesome-rails
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails

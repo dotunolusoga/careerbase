@@ -14,10 +14,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'neat'
 gem 'simple_form'
 gem 'sorcery'
-gem 'pry'
-gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
 gem 'refills'
+gem 'font-awesome-rails'
 
 
 
@@ -27,6 +26,7 @@ group :development, :test do
   gem 'faker'
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'pry'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
