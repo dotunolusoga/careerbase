@@ -1,9 +1,7 @@
-%h2 Listed Companies
+.list-companies
+  %h2 Listed Companies
 
-%ul
-- @companies.each do |company|
-  %li
-    =link_to company.name, company
+  - @companies.each do |company|
     %ul
       %li
-        = company.url
+        =link_to company.name.upcase, company

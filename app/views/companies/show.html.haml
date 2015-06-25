@@ -1,19 +1,22 @@
+.company-profile
 
-%h2 Listed Company
+  %h1 Company
 
-= @company.url
+  %ul
+    %li
+      %p= "#{@company.name.upcase} - #{@company.street1}, #{@company.street2} #{@company.city}, #{@company.state} #{@company.zip}"
+    %li
+      %p= "#{@company.description}"
+    %li
+      %p= "Industry: #{@company.industry}"
+    %li
+      %p= "Size: #{@company.emp_count}"
+    %li
+      %p= @company.contact_name
+    %li
+      %p= "#{@company.email} | #{@company.phone} | #{@company.url}"
 
-%div.notes#notes
-  - if logged_in?
-    %div.note-form
+  =link_to "Edit Company", edit_company_path
 
-= simple_form_for [@company, @note] do |f|
-  = f.input :content, label: "Note"
-  = f.button :submit, "Save Note"
-
-=link_to "Edit Company", edit_company_path
-
-%h2.notes-heading notes
-- @company.notes.each do |note|
-  %p.note-body= note.content
-  %span.timestamp= "#{time_ago_in_words(note.created_at)} ago"
+  .note-form
+    = render partial: 'companies/note'

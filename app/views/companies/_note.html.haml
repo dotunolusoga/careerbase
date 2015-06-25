@@ -1,0 +1,14 @@
+
+- if logged_in?
+  %div.note-form
+
+= simple_form_for [@company, @note] do |f|
+  = f.input :content, label: "New Note"
+  = f.button :submit, label: "Save Note"
+
+%h2.notes-heading Notes
+- @company.notes.each do |note|
+  .note-body
+    %ul
+      %li= note.content
+      %li.timestamp= "posted on #{note.created_at.month}.#{note.created_at.day}.#{note.created_at.year}"
