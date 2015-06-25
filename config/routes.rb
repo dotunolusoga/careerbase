@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :show, :edit, :update, :create]
   resources :companies, only: [:new, :create, :index, :show, :edit, :update] do
-    resources :notes, only: [:create]
+    resources :notes, only: [:create, :destroy]
   end
 
   # Example of regular route:

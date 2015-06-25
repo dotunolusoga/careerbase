@@ -10,5 +10,8 @@
 - @company.notes.each do |note|
   .note-body
     %ul
-      %li= note.content
+      %li.note-content= note.content
       %li.timestamp= "posted on #{note.created_at.month}.#{note.created_at.day}.#{note.created_at.year}"
+      %li
+        =link_to company_note_path(current_user, note), method: :delete do
+          %i.fa.fa-times

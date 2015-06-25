@@ -13,7 +13,6 @@ body {
         padding: 18px;
         display: inline;
         font-size: 1em;
-        border-left: 5px solid #666;
 
         -webkit-transition: all 0.5s linear;
       	-moz-transition: all 0.3s linear;
@@ -59,6 +58,11 @@ body {
       .rightNav {
         display: inline-block;
         float: right;
+      }
+
+      .name-tag {
+        background-color: white;
+        color:  #2FABD0;
       }
     }
 
@@ -281,6 +285,10 @@ body {
         transition: 0.5s linear;
       }
 
+  //////////////////////////
+  ////// NOTES ////////////
+  ////////////////////////
+
       .note-form {
         margin-top: 15px;
       }
@@ -295,20 +303,63 @@ body {
           width: 50%;
           box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
           li {
+            padding: 3px;
 
           }
         }
+
+        i {
+          color: red;
+
+        }
+
+        .note-content {
+          padding: 5px;
+        }
+
         .timestamp {
           font-size: 0.2em;
           color: lightgray;
           font-style: italic;
           font-size: 0.875rem;
         }
+      }
+    }
 
+  //////////////////////////
+  ///// USER PROFILE //////
+  ////////////////////////
+
+
+    .user-profile {
+      @include span-columns(8);
+      @include shift(2);
+
+      border: 1px solid lightgray;
+
+      margin-top: 25px;
+
+      h2 {
+        color: #2FABD0;
+        font-size: 1.5em;
+        font-weight: 400;
       }
 
+      img {
+        @include span-columns(3 of 8);
+        width: 100px;
+      }
 
+      ul {
+        @include span-columns(5 of 8);
+        line-height: 45px;
+        font-family: Lato, 'san-serif';
+        font-size: 1.2em;
 
+        li {
+          padding-bottom: 2px;
+        }
+      }
 
     }
 

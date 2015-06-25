@@ -1,7 +1,10 @@
+.user-profile
 
-%h2 Profile
+  %h2 Profile
+  = gravatar_for @user
 
-= @user.name
-= @user.employment_status
-
-=link_to "Edit Profile", edit_user_path
+  %ul
+    %li= @user.name
+    %li= @user.employment_status
+    %li
+      =link_to "Edit Profile", edit_user_path

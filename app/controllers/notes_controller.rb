@@ -14,5 +14,16 @@ class NotesController < ApplicationController
     end
   end
 
+  def destroy
+    @note = Note.find(params[:id])
+    @company = @note.company
+    @note.destroy
+    if @note.destroy
+      redirect_to company_path(@company.id), notice: "Your note has been deleted."
+    else
+      flash.alert = "Note could not be deleted."
+    end
+  end
+
 
 end
