@@ -66,7 +66,7 @@ class CompaniesController < ApplicationController
 
     if any_change
       @company.update_attributes(company_params)
-      message = "#{@company.name} has been updated. We changed these keys: #{changed_keys.join(',')}"
+      message = "#{@company.name} has been updated."
     else
       message = "#{@company.name} is unchanged."
     end
