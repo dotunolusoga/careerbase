@@ -28,6 +28,14 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+
+    @address_string = ""
+    @address_string << "- " + @company.street1 + ", " if @company.street1.present?
+    @address_string << @company.street2 + " " if @company.street2.present?
+    @address_string << @company.city + ", " if @company.city.present?
+    @address_string << @company.state + " " if @company.state.present?
+    @address_string << @company.zip if @company.zip.present?
+
     @notes = @company.notes.all
     @note = Note.new
   end

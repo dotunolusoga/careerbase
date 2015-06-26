@@ -4,7 +4,10 @@
 
   %ul
     %li
-      %p= "#{@company.name.upcase} - #{@company.street1}, #{@company.street2} #{@company.city}, #{@company.state} #{@company.zip}"
+    - if @address_string.blank?
+      %p= "#{@company.name.upcase}"
+    - else
+      %p= "#{@company.name.upcase} #{@address_string}"
     %li
       %p= "#{@company.description}"
     %li
