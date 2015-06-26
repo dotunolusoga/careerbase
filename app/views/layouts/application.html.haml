@@ -6,6 +6,8 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    %script{:src => '/javascripts/jquery-1.11.3.min.js'}
+    %script{:src => '/javascripts/parsley.min.js'}
     %link{:href => "https://fonts.googleapis.com/css?family=Lato", :rel => "stylesheet", :type => "text/css"}/
   %body
     %header

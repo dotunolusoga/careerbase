@@ -1,10 +1,10 @@
 .form-style
   %h1 Add New Company
 
-  = simple_form_for @company do |f|
+  = simple_form_for @company, :data => {:parsley_validate => ""} do |f|
     = f.input :name, label: "Company Name"
-    = f.input :url, label: "Website", placeholder: "www.example.com"
-    = f.input :email, label: "Contact Email - make sure this is an email address you can interact with"
+    = f.input :url, label: "Website", input_html: {'data-parsley-trigger' => 'change',  'data-parsley-required' => 'true'}
+    = f.input :email, required: true, label: "Contact Email - make sure this is an email address you can interact with", input_html: {'data-parsley-trigger' => 'focusin focusout change'}
     = f.input :description, label: "Description of Company"
     = f.input :contact_name, label: "Contact - who do you know at this company?"
     = f.input :phone
