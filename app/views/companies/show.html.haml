@@ -11,13 +11,15 @@
     %li
       %p= "#{@company.description}"
     %li
+    - if @company.industry.present?
       %p= "Industry: #{@company.industry}"
     %li
+    - if @company.emp_count.present?
       %p= "Size: #{@company.emp_count}"
     %li
       %p= @company.contact_name
     %li
-      %p= "#{@company.email} | #{@company.phone} | #{@company.url}"
+      %p= "#{@email_string}"
 
   =link_to "Edit Company", edit_company_path
 

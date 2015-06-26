@@ -36,6 +36,11 @@ class CompaniesController < ApplicationController
     @address_string << @company.state + " " if @company.state.present?
     @address_string << @company.zip if @company.zip.present?
 
+    @email_string = ""
+    @email_string << @company.email + " | " if @company.email.present?
+    @email_string << @company.phone + " | " if @company.phone.present?
+    @email_string << @company.url if @company.url.present?
+
     @notes = @company.notes.all
     @note = Note.new
   end
