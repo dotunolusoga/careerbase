@@ -3,7 +3,7 @@
   %div.note-form
 
 = simple_form_for [@company, @note] do |f|
-  = f.input :content, label: "New Note"
+  = f.input :content, label: "New Note", :required => true
   = f.button :submit, label: "Save Note"
 
 %h2.notes-heading Notes

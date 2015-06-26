@@ -9,8 +9,8 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to company_path(@company), notice: "Noted!"
     else
-      flash.alert = "Your note could not be saved. Please correct the errors below."
-      render "companies/show"
+      redirect_to company_path(@company)
+      flash.alert = "Your note could not be saved."
     end
   end
 
