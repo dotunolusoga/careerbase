@@ -14,16 +14,10 @@ body {
         display: inline;
         font-size: 1em;
 
-        -webkit-transition: all 0.3s ease-in;
-        -moz-transition: all 0.3s ease-in;
-        -o-transition: all 0.3s ease-in;
       }
 
       h2 {
         font-weight: 400;
-        -webkit-transition: all 0.1s ease-in;
-        -moz-transition: all 0.1s ease-in;
-        -o-transition: all 0.1s ease-in;
       }
 
       h2:hover {
@@ -36,7 +30,6 @@ body {
          border-left: 5px solid #000;
          background-color: white;
          font-weight: 600;
-         transition: 0.5s linear;
       }
 
       a:hover {
